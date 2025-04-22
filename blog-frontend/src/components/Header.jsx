@@ -3,8 +3,6 @@ import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-
-import { images } from "../constants";
 import { logout } from "../store/actions/user";
 
 const navItemsInfo = [
@@ -18,17 +16,13 @@ const navItemsInfo = [
       { title: "Contact us", href: "/contact" },
     ],
   },
-  { name: "Pricing", type: "link", href: "/pricing" },
-  { name: "Faq", type: "link", href: "/faq" },
 ];
 
 const NavItem = ({ item }) => {
   const [dropdown, setDropdown] = useState(false);
 
   const toggleDropdownHandler = () => {
-    setDropdown((curState) => {
-      return !curState;
-    });
+    setDropdown((curState) => !curState);
   };
 
   return (
@@ -82,9 +76,7 @@ const Header = () => {
   const [profileDrowpdown, setProfileDrowpdown] = useState(false);
 
   const navVisibilityHandler = () => {
-    setNavIsVisible((curState) => {
-      return !curState;
-    });
+    setNavIsVisible((curState) => !curState);
   };
 
   const logoutHandler = () => {
@@ -95,7 +87,7 @@ const Header = () => {
     <section className="sticky top-0 left-0 right-0 z-50 bg-white">
       <header className="container mx-auto px-5 flex justify-between py-4 items-center">
         <Link to="/">
-          <img className="w-16" src={images.Logo} alt="logo" />
+          <h1 className="text-2xl font-bold text-blue-600">Blog-App</h1>
         </Link>
         <div className="lg:hidden z-50">
           {navIsVisible ? (
